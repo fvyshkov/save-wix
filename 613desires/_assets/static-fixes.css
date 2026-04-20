@@ -1,0 +1,63 @@
+/* Fix broken images: override Wix wow-image error state */
+wow-image {
+  display: block !important;
+  overflow: hidden !important;
+}
+
+wow-image img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  filter: none !important;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Override Wix error/noImage states that hide content */
+.oUi7cVj--isError,
+.oUi7cVj--noImage {
+  background-color: transparent !important;
+}
+
+.oUi7cVj--isError::before,
+.oUi7cVj--isError::after {
+  display: none !important;
+}
+
+/* Fix dropdown menus: show hidden submenu on hover.
+   Wix puts the real links in a <ul style="display:none"> inside the <li>,
+   and the visual dropdown container (.h3jCPd) is empty without JS. */
+.Tg1gOB:hover > ul[aria-hidden="true"],
+.Tg1gOB:focus-within > ul[aria-hidden="true"] {
+  display: block !important;
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 8px 0;
+  z-index: 99999;
+  min-width: 160px;
+  margin-top: 4px;
+}
+
+.Tg1gOB:hover > ul[aria-hidden="true"] li,
+.Tg1gOB:focus-within > ul[aria-hidden="true"] li {
+  list-style: none;
+  padding: 0;
+}
+
+.Tg1gOB:hover > ul[aria-hidden="true"] a,
+.Tg1gOB:focus-within > ul[aria-hidden="true"] a {
+  display: block;
+  padding: 6px 16px;
+  color: #333;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.Tg1gOB:hover > ul[aria-hidden="true"] a:hover {
+  background: #f5f5f5;
+}
