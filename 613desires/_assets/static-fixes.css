@@ -1,10 +1,10 @@
 /* Fix broken images: override Wix wow-image error state */
-wow-image {
+[data-was-wow-image] {
   display: block !important;
   overflow: hidden !important;
 }
 
-wow-image img {
+[data-was-wow-image] img {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
